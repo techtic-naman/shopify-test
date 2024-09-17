@@ -60,7 +60,6 @@ async function getData(productName) {
       results = await Promise.all(
         products.map((product) => {
           return product.variants.edges.map((variant) => {
-            // console.log("variant", variant);
             return {
               product_name: product.title,
               variant_name: variant.node.title,
@@ -69,7 +68,6 @@ async function getData(productName) {
           });
         })
       );
-      // console.log("REsults : ", results);
       results
       .flat()
       .sort((a, b) => a.price - b.price)
@@ -133,7 +131,6 @@ async function getData(productName) {
           });
         })
       );
-      // console.log("REsults : ", results);
       results
       .flat()
       .sort((a, b) => a.price - b.price)
